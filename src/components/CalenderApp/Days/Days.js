@@ -1,6 +1,7 @@
 import React from 'react';
 import { MdToday } from 'react-icons/md';
 import { FaBirthdayCake, FaGraduationCap } from 'react-icons/fa';
+import { GiStarsStack } from "react-icons/gi";
 import Modal from '../../common/Modal/Modal';
 import { calenderIcons, dayContainer, modalContentContainer, modalHeaderContainer, modalIcons } from '../../common/ClassNames';
 
@@ -17,6 +18,7 @@ function Days({ value, month, year, status }) {
                 {(status === "today") && <div className={calenderIcons}><MdToday/></div>}
                 {(status === "birthday") && <div className={calenderIcons}><FaBirthdayCake/></div>}
                 {(status === "graduation") && <div className={calenderIcons}><FaGraduationCap/></div>}
+                {(status === "military") && <div className={calenderIcons}><GiStarsStack/></div>}
               </div>
             } 
             header={
@@ -25,6 +27,7 @@ function Days({ value, month, year, status }) {
                 {(status === "today") && <div className={modalIcons}><MdToday/></div>}
                 {(status === "birthday") && <div className={`mt-1 ${modalIcons}`}><FaBirthdayCake/></div>}
                 {(status === "graduation") && <div className={modalIcons}><FaGraduationCap/></div>}
+                {(status === "military") && <div className={modalIcons}><GiStarsStack/></div>}
               </div>
             } 
             content={

@@ -7,14 +7,11 @@ function getYear(today, isLeap, year, isNow) {
     let month = today.split(' ')[1];
     let value = parseInt(today.split(' ')[2]);
     const thisMonth = getMonth(day,month,value, isLeap);
-
     const output = [
         {
             year: year,
             month: month,
-            status: (isNow ? "thisMonth" : ""),
-            thisMonth: isNow ? true : false,
-            myBirthday: year === 1997 && month === "Jul" ? true : false,
+            thisMonth: (isNow ? true : false),
             myGraduation: year === 2022 && month === "Dec" ? true : false,
             info: thisMonth
         }
@@ -32,10 +29,10 @@ function getYear(today, isLeap, year, isNow) {
                 {
                     year: year,
                     month: next.month,
-                    status: "",
-                    thisMonth: isNow ? true : false,
+                    thisMonth: false,
                     myBirthday: year === 1997 && next.month === "Jul" ? true : false,
                     myGraduation: year === 2022 && next.month === "Dec" ? true : false,
+                    joinMiliary: year === 2020 && month === "Jan" ? true : false,
                     info: nextMonth
                 }
             );
@@ -51,9 +48,7 @@ function getYear(today, isLeap, year, isNow) {
             {
                 year: year,
                 month: next.month,
-                status: "",
-                thisMonth: isNow ? true : false,
-                myBirthday: year === 1997 && next.month === "Jul" ? true : false,
+                thisMonth: false,
                 myGraduation: year === 2022 && next.month === "Dec" ? true : false,
                 info: nextMonth
             }
@@ -69,10 +64,9 @@ function getYear(today, isLeap, year, isNow) {
                 {
                     year: year,
                     month: prev.month,
-                    status: "",
-                    thisMonth: isNow ? true : false,
+                    thisMonth: false,
                     myBirthday: year === 1997 && prev.month === "Jul" ? true : false,
-                    myGraduation: year === 2022 && prev.month === "Dec" ? true : false,
+                    joinMiliary: year === 2020 && prev.month === "Jan" ? true : false,
                     info: prevMonth
                 }
             );
@@ -85,10 +79,9 @@ function getYear(today, isLeap, year, isNow) {
             {
                 year: year,
                 month: prev.month,
-                status: "",
-                thisMonth: isNow ? true : false,
+                thisMonth: false,
                 myBirthday: year === 1997 && prev.month === "Jul" ? true : false,
-                myGraduation: year === 2022 && prev.month === "Dec" ? true : false,
+                joinMiliary: year === 2020 && prev.month === "Jan" ? true : false,
                 info: prevMonth
             }
         );

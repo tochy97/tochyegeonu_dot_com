@@ -12,6 +12,7 @@ function Months( { thisMonth, year } ) {
     const currentMonth = (year === today.getFullYear() && oneYear[today.getMonth()] === month);
     const birthMonth = (year === 1997 && month === 'Jul');
     const gradMonth = (year === 2022 && month === 'Dec');
+    const militaryMonth = (year === 2020 && month === 'Jan');
     return (
         <div className={monthContainer}>
             <MonthHeader month={month} year={year}/>
@@ -32,6 +33,8 @@ function Months( { thisMonth, year } ) {
                                     ? "birthday"
                                     :(gradMonth && inner?.value === 21)
                                     ? "graduation"
+                                    :(militaryMonth && inner?.value === 1)
+                                    ? "military"
                                     : ""
                                 } 
                             />

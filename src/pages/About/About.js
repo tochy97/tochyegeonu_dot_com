@@ -33,28 +33,6 @@ function About() {
                         </iframe>
                     </div>
                 </div>
-                <hr className={pageDivider}/>
-                <div>
-                    <p className={pageHeader}>Experience</p>
-                    <div className={doubleStack}>
-                        {
-                            skillList.map((element, index) => (
-                                <motion.div 
-                                    key={index} 
-                                    className='flex gap-1'
-                                    initial={{opacity:0, height:0}}
-                                    animate={{opacity:1, height:"auto"}}
-                                    transition={{ duration: 1, ease: 'linear', delay: index }}
-                                >
-                                    <AiOutlineCode className='mt-[4px]'/>
-                                    <p className=''>{element}</p>
-                                </motion.div>
-                            ))
-                        }
-                    </div>
-                    <Contact/>
-                </div>
-
             </div>
     );
 }
