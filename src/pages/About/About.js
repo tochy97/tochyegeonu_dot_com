@@ -16,13 +16,8 @@ function About() {
                     I am a practicing software developer with a B.S. in Computer Science from the University of Texas at Arlington.
                 </div>
                 <div className={innerText}>
-                    Professional experience creating and maintaining enterprise level web applications and API.
-                </div>
-                <div className={innerText}>
-                    Currently enlisted in the Army National Guard as an infantryman.
-                </div>
-                <div className={innerText}>
-                    Currently employeed by Argodata as a application developer.
+                    The history page is something i wrote for fun. It is all Javascript base. I use todays date to calculate the week, the week is used to calculate the month, the month is used calculate year, then i use the year calculation to go all the way back to my birthday.
+                    Enjoy the bubbles!
                 </div>
                 <hr className={pageDivider}/>
                 <div className={centerContainer}>
