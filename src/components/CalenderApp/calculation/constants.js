@@ -25,6 +25,36 @@ export const oneYear =
     "Dec"
 ]
 
+export const makeSunday = (day, value) => {
+    switch(day)
+    {
+        case "Mon":
+            value -= 1;
+            break;
+        case "Tue":
+            value -= 2;
+            break;
+        case "Wed":
+            value -= 3;
+            break;
+        case "Thu":
+            value -= 4;
+            break;
+        case "Fri":
+            value -= 5;
+            break;
+        case "Sat":
+            value -= 6;
+            break;
+        default:
+            break;
+    }
+    if (value <= -7) {
+        value +=7;
+    }
+    return value
+}
+
 export const nextDay = (day) => {
     switch(day)
     {
@@ -41,7 +71,7 @@ export const nextDay = (day) => {
         case "Sat":
             return "Sun"
         case "Sun":
-            return "Sat"
+            return "Mon"
         default:
             return "";
     }

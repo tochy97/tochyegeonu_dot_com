@@ -1,4 +1,4 @@
-import { monthMax } from './constants';
+import { monthMax, makeSunday } from './constants';
 import getWeek from './getWeek'; 
 
 function getMonth(day, month, value, isLeap)
@@ -14,12 +14,16 @@ function getMonth(day, month, value, isLeap)
         value -= 7;
     }
     
+    value = makeSunday(day, value)
+    day = "Sun";
     let nextWeek = getWeek(day, value, max)
-    while(nextWeek && value < max + 7 && nextWeek[0].value < max && nextWeek.length)
+    while(nextWeek && value <= max && nextWeek[0].value <= max && nextWeek.length)
     {
         value = value + 7;
         if(nextWeek.length <= 7)
             output.data.push(nextWeek);
+        value = makeSunday(day, value)
+        day = "Sun";
         nextWeek = getWeek(day, value, max)
     }
     

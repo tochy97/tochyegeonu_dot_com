@@ -9,35 +9,6 @@ function getWeek(day, value, max)
 
     const output = []
     const today = day;
-    switch(day)
-    {
-        case "Mon":
-            value -= 1;
-            day = "Sun";
-            break;
-        case "Tue":
-            value -= 2;
-            day = "Sun";
-            break;
-        case "Wed":
-            value -= 3;
-            day = "Sun";
-            break;
-        case "Thu":
-            value -= 4;
-            day = "Sun";
-            break;
-        case "Fri":
-            value -= 5;
-            day = "Sun";
-            break;
-        case "Sat":
-            value -= 6;
-            day = "Sun";
-            break;
-        default:
-            break;
-    }
 
     const nextsunday = value + 7;
     let index = 0;
