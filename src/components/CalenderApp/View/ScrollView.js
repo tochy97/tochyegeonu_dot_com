@@ -36,7 +36,7 @@ function ScrollView({ display }) {
     
     const handleClick = id => refs[id].current.scrollIntoView({
         behavior: 'smooth',
-        block: 'start',
+        block: 'center',
     });
 
     let [viewHeight,setViewHeight] = useState(80);
@@ -55,7 +55,7 @@ function ScrollView({ display }) {
     });
 
     return (
-        <div className={`${historyContainer} h-[${viewHeight}vh] snap-y snap-mandatory`} ref={calenderRef}>
+        <div className={`${historyContainer} h-[${viewHeight}vh]`} ref={calenderRef}>
             <motion.div className={scrollTracker} style={{ scaleX: scrollYProgress}}/>
             <div className={fixedOptionBox}>
                 <div className={pictureButton} onClick={() => handleClick(birthdayIndex)}>
@@ -75,7 +75,7 @@ function ScrollView({ display }) {
                 (display && currentIndex && birthdayIndex)
                 ?
                 display.map((element,index) => (
-                    <div className="snap-start" key={index} ref={refs[index]}>
+                    <div key={index} ref={refs[index]}>
                         <Months 
                             thisMonth={element} 
                             id={index + 1} 
