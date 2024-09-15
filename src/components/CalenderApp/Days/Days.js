@@ -3,40 +3,61 @@ import { MdToday } from 'react-icons/md';
 import { FaBirthdayCake, FaGraduationCap } from 'react-icons/fa';
 import { GiStarsStack } from "react-icons/gi";
 import Modal from '../../common/Modal/Modal';
-import { calenderIcons, dayContainer, modalContentContainer, modalHeaderContainer, modalIcons } from '../../common/ClassNames';
+import { calenderIcons, dayContainer, modalContainer, modalContentContainer, modalHeaderContainer, stack } from '../../common/ClassNames';
 
+/**
+ * Render day box and modal
+ * @param {Number} value 
+ * @param {String} month 
+ * @param {String} year 
+ * @param {String} status 
+ * @returns 
+ */
 function Days({ value, month, year, status }) {
-  
+
+  let icon;
+  switch (status) {
+    case "today":
+      icon = <MdToday />;
+      break;
+    case "birthday":
+      icon = <FaBirthdayCake />;
+      break;
+    case "graduation":
+      icon = <FaGraduationCap />;
+      break;
+    case "military":
+      icon = <GiStarsStack />;
+      break;
+    default:
+      break;
+  }
+
   return (
     <>
       {
         value !== 0 ?
-          <Modal 
+          <Modal
             trigger={
               <div className={dayContainer}>
-                {value} 
-                {(status === "today") && <div className={calenderIcons}><MdToday/></div>}
-                {(status === "birthday") && <div className={calenderIcons}><FaBirthdayCake/></div>}
-                {(status === "graduation") && <div className={calenderIcons}><FaGraduationCap/></div>}
-                {(status === "military") && <div className={calenderIcons}><GiStarsStack/></div>}
+                {value}
+                {(typeof status !== "undefined") && <div className={calenderIcons}>{icon}</div>}
               </div>
-            } 
+            }
             header={
               <div className={modalHeaderContainer}>
                 <div className='mr-3'>{month} {value}, {year}</div>
-                {(status === "today") && <div className={modalIcons}><MdToday/></div>}
-                {(status === "birthday") && <div className={`mt-1 ${modalIcons}`}><FaBirthdayCake/></div>}
-                {(status === "graduation") && <div className={modalIcons}><FaGraduationCap/></div>}
-                {(status === "military") && <div className={modalIcons}><GiStarsStack/></div>}
+                {(typeof status !== "undefined") && <div className={calenderIcons}>{icon}</div>}
               </div>
-            } 
+            }
             content={
               <div className={modalContentContainer}></div>
             }
-            fullScreen={true}
+            closeButtonclass={'justify-self-center fixed bottom-[15px]'}
+            containerClass={modalContainer + stack + " fixed"}
           />
-        :
-        <div className="md:h-24"/>
+          :
+          <div className="md:h-24" />
       }
     </>
   );

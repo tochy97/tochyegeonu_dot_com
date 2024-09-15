@@ -1,88 +1,96 @@
 import getMonth from "./getMonth";
 import getNextMonth from "./getNextMonth";
 import getPrevMonth from "./getPrevMonth";
+import { getMonthIndex } from "./constants";
 
-function getYear(today, isLeap, year, isNow) {
-    let day = today.split(' ')[0];
-    let month = today.split(' ')[1];
-    let value = parseInt(today.split(' ')[2]);
-    const thisMonth = getMonth(day,month,value, isLeap);
+/**
+ * Calculate Year starting at anymonth
+ * User getMonth to get the Month objects
+ * @param {String} today 
+ * @param {Boolean} isLeap 
+ * @param {Number} year 
+ * @param {Boolean} isNow 
+ * @returns {Object}
+ */
+function getYear(stringDay, isLeap, year, isNow, monthIndex) {
+
+    let day = stringDay.split(' ')[0];
+    let month = stringDay.split(' ')[1];
+    let value = parseInt(stringDay.split(' ')[2]);
+
+    /**
+     * Get current month
+     */
+    const thisMonth = getMonth(day, month, value, isLeap, year);
     const output = [
         {
             year: year,
             month: month,
             thisMonth: (isNow ? true : false),
-            myGraduation: year === 2022 && month === "Dec" ? true : false,
-            info: thisMonth
+            info: thisMonth,
+            index: getMonthIndex(month)
         }
     ];
-    
+
     let next = getNextMonth(thisMonth, isLeap);
-    let nextMonth = getMonth(next.day, next.month, next.value, isLeap);
-    
-    if(month !== "Dec"){
-        while(next.month !== "Dec"){
-    if(year === 1997){
-        console.log(year, month)
-    }
+    let nextMonth = getMonth(next.day, next.month, next.value, isLeap, year);
+
+    /**
+     * Get all the months from the original to December.
+     */
+    if (month !== "Dec") {
+        while (next.month !== "Dec") {
             output.push(
                 {
                     year: year,
                     month: next.month,
                     thisMonth: false,
-                    myBirthday: year === 1997 && next.month === "Jul" ? true : false,
-                    myGraduation: year === 2022 && next.month === "Dec" ? true : false,
-                    joinMiliary: year === 2020 && month === "Jan" ? true : false,
-                    info: nextMonth
+                    info: nextMonth,
+                    index: getMonthIndex(next.month)
                 }
             );
-            
-            next = getNextMonth(nextMonth, isLeap);
-            nextMonth = getMonth(next.day, next.month, next.value, isLeap);
-        }
 
-    if(year === 1997){
-        console.log(year, month)
-    }
+            next = getNextMonth(nextMonth, isLeap);
+            nextMonth = getMonth(next.day, next.month, next.value, isLeap, year);
+        }
         output.push(
             {
                 year: year,
                 month: next.month,
                 thisMonth: false,
-                myGraduation: year === 2022 && next.month === "Dec" ? true : false,
-                info: nextMonth
+                info: nextMonth,
+                index: getMonthIndex(next.month)
             }
         );
     }
-
+    
+    /**
+     * Get all the months from the original to January.
+     */
     let prev = getPrevMonth(thisMonth, isLeap);
-    let prevMonth = getMonth(prev.day, prev.month, prev.value, isLeap);
-    if(month !== "Jan")
-    {
-        while(prev.month !== "Jan"){
+    let prevMonth = getMonth(prev.day, prev.month, prev.value, isLeap, year);
+    if (month !== "Jan") {
+        while (prev.month !== "Jan") {
             output.unshift(
                 {
                     year: year,
                     month: prev.month,
                     thisMonth: false,
-                    myBirthday: year === 1997 && prev.month === "Jul" ? true : false,
-                    joinMiliary: year === 2020 && prev.month === "Jan" ? true : false,
-                    info: prevMonth
+                    info: prevMonth,
+                    index: getMonthIndex(prev.month)
                 }
             );
-
             prev = getPrevMonth(prevMonth, isLeap);
-            prevMonth = getMonth(prev.day, prev.month, prev.value, isLeap);
+            prevMonth = getMonth(prev.day, prev.month, prev.value, isLeap, year);
         }
-        
+
         output.unshift(
             {
                 year: year,
                 month: prev.month,
                 thisMonth: false,
-                myBirthday: year === 1997 && prev.month === "Jul" ? true : false,
-                joinMiliary: year === 2020 && prev.month === "Jan" ? true : false,
-                info: prevMonth
+                info: prevMonth,
+                index: getMonthIndex(prev.month)
             }
         );
     }

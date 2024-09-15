@@ -1,24 +1,38 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { closeButton, modalContainer, pageDivider, stack } from '../ClassNames';
-
-function Modal({ trigger, header, content, fullScreen }) {
+import { closeButton, pageDivider, stack } from '../ClassNames';
+/**
+ * 
+ * @param {HTMLObjectElement} trigger 
+ * @param {HTMLObjectElement} header 
+ * @param {HTMLObjectElement} content 
+ * @param {Boolean} fullScreen
+ * @returns {ReactDOM}
+ */
+function Modal({ trigger, header, content, closeButtonclass, containerClass, width, height, top, left }) {
     const [visible, setVisible] = useState(false);
     const modalRef = useRef();
 
-    // useEffect(() => {
-    //     const handleClickOutside = (event) => {
+    useEffect(() => {
+        // Close modal if click outside
+        const handleClickOutside = (event) => {
 
-    //     if (modalRef.current && !modalRef.current.contains(event.target)) {
-    //         setVisible(false)
-    //     }
-    //     }
-        
-    //     document.addEventListener("mousedown", handleClickOutside);
+            if (modalRef.current && !modalRef.current.contains(event.target)) {
+                setVisible(false)
+            }
+        }
 
-    //     return () => {
-    //     document.removeEventListener("mousedown", handleClickOutside);
-    //     };
-    // }, [modalRef]);
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [modalRef]);
+
+    // Default fullscreen
+    let w = width ? width : 'screen';
+    let h = height ? height : 'screen';
+    let t = top ? top : '[75px]';
+    let l = left ? left : '0';
 
     return (
         <>
@@ -27,23 +41,27 @@ function Modal({ trigger, header, content, fullScreen }) {
             </div>
             {
                 visible &&
-                <div 
-                    ref={modalRef} 
+                <div
+                    ref={modalRef}
                     className={`
-                        ${modalContainer} 
-                        fixed 
-                        top-${fullScreen ? '[75px]' : '[25%]'} 
-                        left-${fullScreen ? '0' : '[25%]'} 
-                        w-${fullScreen ? 'screen' : '[50%]'} 
-                        h-${fullScreen ? 'screen' : '[50%]'} 
-                        ${!fullScreen && 'rounded-lg'}`}
+                        ${containerClass}
+                        top-${t} 
+                        left-${l} 
+                        w-${w} 
+                        h-${h} 
+                        rounded-lg`}
                 >
-                    <div className={stack}>
-                    {header}
-                    <hr className={pageDivider} />
+                    {
+                        header ?
+                            <>
+                                {header}
+                                <hr className={pageDivider} />
+                            </>
+                            :
+                            <></>
+                    }
                     {content}
-                    <button className={`${closeButton} + justify-self-center fixed bottom-[15px]`} onClick={() => setVisible(false)} >Close</button>
-                    </div>
+                    <button className={closeButton + closeButtonclass} onClick={() => setVisible(false)} >Close</button>
                 </div>
             }
         </>

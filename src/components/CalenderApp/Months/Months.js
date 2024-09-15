@@ -5,44 +5,44 @@ import Days from '../Days/Days';
 import WeekHeader from '../Header/WeekHeader';
 import MonthHeader from '../Header/MonthHeader';
 
-function Months( { thisMonth, year } ) {
+function Months({ thisMonth, year }) {
     const month = thisMonth.info.month;
     const today = new Date();
-    
+
     const currentMonth = (year === today.getFullYear() && oneYear[today.getMonth()] === month);
     const birthMonth = (year === 1997 && month === 'Jul');
     const gradMonth = (year === 2022 && month === 'Dec');
     const militaryMonth = (year === 2020 && month === 'Jan');
     return (
         <div className={monthContainer}>
-            <MonthHeader month={month} year={year}/>
-                <WeekHeader month={month}/>
-                <div className={monthGrid}>
+            <MonthHeader month={month} year={year} />
+            <WeekHeader month={month} />
+            <div className={monthGrid}>
                 {
                     thisMonth.info.data.map((element, index) => (
                         element.map((inner, innerIndex) => (
-                            <Days 
-                                key={`${index} ${inner?.value} ${innerIndex}`} 
-                                value={inner?.value} 
+                            <Days
+                                key={`${index} ${inner?.value} ${innerIndex}`}
+                                value={inner?.value}
                                 month={month}
                                 year={year}
                                 status={
-                                    (currentMonth && inner?.value === today.getDate()) 
-                                    ? "today" 
-                                    :(birthMonth && inner?.value === 28)
-                                    ? "birthday"
-                                    :(gradMonth && inner?.value === 21)
-                                    ? "graduation"
-                                    :(militaryMonth && inner?.value === 1)
-                                    ? "military"
-                                    : ""
-                                } 
+                                    (currentMonth && inner?.value === today.getDate())
+                                        ? "today"
+                                        : (birthMonth && inner?.value === 28)
+                                            ? "birthday"
+                                            : (gradMonth && inner?.value === 21)
+                                                ? "graduation"
+                                                : (militaryMonth && inner?.value === 1)
+                                                    ? "military"
+                                                    : ""
+                                }
                             />
                         ))
                     ))
                 }
-                </div>
-        </div> 
+            </div>
+        </div>
     );
 }
 

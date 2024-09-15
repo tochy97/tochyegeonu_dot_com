@@ -6,13 +6,13 @@ function WeekHeader() {
 
     return (
         <div className={weekHeaderContainer}>
-        {
-            oneWeek.map((element, index) => (
-                <div className={weekContainer} key={index}>
-                    {element}
-                </div>
-            ))
-        }
+            {
+                oneWeek.map((element, index) => (
+                    <div className={weekContainer} key={index}>
+                        {element}
+                    </div>
+                ))
+            }
         </div>
     );
 }

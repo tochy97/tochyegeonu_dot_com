@@ -1,33 +1,36 @@
+export const findDate = (life, day, month, year) => {
+
+}
+
 export const oneWeek =
-[
-    "Sun",
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat"
-];
+    [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+    ];
 
 export const oneYear =
-[
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-]
+    [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+    ]
 
 export const makeSunday = (day, value) => {
-    switch(day)
-    {
+    switch (day) {
         case "Mon":
             value -= 1;
             break;
@@ -50,14 +53,13 @@ export const makeSunday = (day, value) => {
             break;
     }
     if (value <= -7) {
-        value +=7;
+        value += 7;
     }
     return value
 }
 
 export const nextDay = (day) => {
-    switch(day)
-    {
+    switch (day) {
         case "Mon":
             return "Tue";
         case "Tue":
@@ -78,8 +80,7 @@ export const nextDay = (day) => {
 }
 
 export const prevDay = (day) => {
-    switch(day)
-    {
+    switch (day) {
         case "Mon":
             return "Sun";
         case "Tue":
@@ -100,12 +101,11 @@ export const prevDay = (day) => {
 }
 
 export const monthMax = (month, leap) => {
-    switch(month)
-    {
+    switch (month) {
         case "Jan":
             return 31;
         case "Feb":
-            if(leap){
+            if (leap) {
                 return 29;
             }
             return 28;
@@ -135,8 +135,7 @@ export const monthMax = (month, leap) => {
 }
 
 export const nextMonth = (month) => {
-    switch(month)
-    {
+    switch (month) {
         case "Jan":
             return "Feb";
         case "Feb":
@@ -167,8 +166,7 @@ export const nextMonth = (month) => {
 }
 
 export const prevMonth = (month) => {
-    switch(month)
-    {
+    switch (month) {
         case "Jan":
             return "Dec";
         case "Feb":
@@ -198,9 +196,40 @@ export const prevMonth = (month) => {
     }
 }
 
+export const getMonthIndex = (month) => {
+    switch (month) {
+        case "Jan":
+            return 1;
+        case "Feb":
+            return 2;
+        case "Mar":
+            return 3;
+        case "Apr":
+            return 4;
+        case "May":
+            return 5;
+        case "Jun":
+            return 6;
+        case "Jul":
+            return 7;
+        case "Aug":
+            return 8;
+        case "Sep":
+            return 9;
+        case "Oct":
+            return 10;
+        case "Nov":
+            return 11;
+        case "Dec":
+            return 12;
+        default:
+            return null;
+    }
+}
+
 export const getWindowSize = () => {
-  const {innerWidth, innerHeight} = window;
-  return {innerWidth, innerHeight};
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
 }
 
 

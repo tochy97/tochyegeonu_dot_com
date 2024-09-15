@@ -1,15 +1,24 @@
 import React from 'react';
-import ScrollView from './View/ScrollView';
-import { container } from '../../components/common/ClassNames';
-import CaroselView from './View/CaroselView';
+import View from './View/View';
+import getPast from "./calculation/getPast";
 
-function CalenderApp({ display }) {
-    return (
-        <div>
-            <ScrollView display={display}/>
-            {/* <CaroselView display={display} /> */}
-        </div>
-    );
+function CalenderApp() {
+  // Get full life object
+  const myLife = getPast(1997);
+
+  // Create new display object and map life
+  const display = [];
+  myLife.forEach((element) => {
+    element.data.forEach(value => {
+      display.push(value);
+    })
+  });
+
+  return (
+    <div>
+      <View display={display} />
+    </div>
+  );
 }
 
 export default CalenderApp;
