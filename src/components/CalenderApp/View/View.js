@@ -5,7 +5,7 @@ import { MdToday } from 'react-icons/md';
 import { submitButton, fixedOptionBox, historyContainer, pictureButton, scrollTracker, modalContainer, stack, textField } from '../../common/ClassNames';
 import { useWindowDimensions } from '../../common/Functions';
 import Loading from '../../common/Loading/Loading';
-import Months from '../Months/Months';
+import Months from '../View/Months/Months';
 import { motion, useScroll } from "framer-motion";
 import { FaSearch } from "react-icons/fa";
 import Modal from '../../common/Modal/Modal';
@@ -52,7 +52,7 @@ function ScrollView({ display }) {
     const search = (year, month) => {
         return refs.findIndex((element) => (element.value === year + '' + month));
     }
-    const currentIndex = search(today.getFullYear(), today.getUTCMonth());
+    const currentIndex = search(today.getFullYear(), today.getUTCMonth() + 1);
     const birthdayIndex = search(1997, 7)
     const graduationIndex = search(2022, 12);
     const militaryIndex = search(2020, 1);

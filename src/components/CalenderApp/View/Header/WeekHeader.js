@@ -1,6 +1,6 @@
 import React from 'react';
-import { weekContainer, weekHeaderContainer } from '../../common/ClassNames';
-import { oneWeek } from '../calculation/constants';
+import { weekContainer, weekHeaderContainer } from '../../../common/ClassNames';
+import { oneWeek } from '../../calculation/constants';
 
 function WeekHeader() {
 

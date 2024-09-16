@@ -2,8 +2,8 @@ import React from 'react';
 import { MdToday } from 'react-icons/md';
 import { FaBirthdayCake, FaGraduationCap } from 'react-icons/fa';
 import { GiStarsStack } from "react-icons/gi";
-import Modal from '../../common/Modal/Modal';
-import { calenderIcons, dayContainer, modalContainer, modalContentContainer, modalHeaderContainer, stack } from '../../common/ClassNames';
+import Modal from '../../../common/Modal/Modal';
+import { calenderIcons, dayContainer, modalContainer, modalContentContainer, modalHeaderContainer, stack } from '../../../common/ClassNames';
 
 /**
  * Render day box and modal

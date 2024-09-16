@@ -1,6 +1,6 @@
 import React from 'react';
-import { monthContainer, monthGrid } from '../../common/ClassNames';
-import { oneYear } from '../calculation/constants';
+import { monthContainer, monthGrid } from '../../../common/ClassNames';
+import { oneYear } from '../../calculation/constants';
 import Days from '../Days/Days';
 import WeekHeader from '../Header/WeekHeader';
 import MonthHeader from '../Header/MonthHeader';

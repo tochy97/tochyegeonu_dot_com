@@ -12,7 +12,7 @@ function Footer() {
                 <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tochukwu-egeonu-79935a127/">
                     <AiOutlineLinkedin className={footerIcon}/>
                 </a>
-                <a target="_blank" rel="noreferrer" href="https://www.facebook.com/tochy.egeonu">
+                <a target="_blank" rel="noreferrer" href="https://www.facebook.com/share/wH9d8avJQyAKdiRT/?mibextid=LQQJ4d">
                     <AiOutlineFacebook className={footerIcon}/>
                 </a>
             </div>
