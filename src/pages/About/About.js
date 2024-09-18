@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { button, centerContainer, innerContainer, innerText, link, myPic, pageDivider, pageHeader, stack } from '../../components/common/ClassNames';
+import { button, centerContainer, closeButton, innerContainer, innerText, link, myPic, pageDivider, pageHeader, stack, submitButton } from '../../components/common/ClassNames';
 import { motion } from "framer-motion";
 import { useWindowDimensions } from '../../components/common/Functions';
 import me from '../../components/pics/me.png'
@@ -13,13 +13,14 @@ function About() {
 
     const { width, height } = useWindowDimensions();
 
+    // test
     return (
         <div className={stack + ' justify-items-center'}>
             <img className={myPic} src={me} alt="Me" />
             <div className={innerText}>
                 Practicing software developer with a B.S. in Computer Science from the University of Texas at Arlington.
             </div>                  
-            <p className={button + 'cursor-pointer text-center'} onClick={() => setIsResumeOpen(!isResumeOpen)}>Resume</p>
+            <p className={(isResumeOpen ? closeButton : submitButton) + 'cursor-pointer text-center'} onClick={() => setIsResumeOpen(!isResumeOpen)}>Resume</p>
             <motion.div
                 animate={isResumeOpen ? "open" : "closed"}
                 variants={variants}
