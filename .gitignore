@@ -25,5 +25,4 @@ yarn-error.log*
 secrets*
 .firebaserc
 .firebase/hosting.YnVpbGQ.cache
-firebase.json
 node_modules
