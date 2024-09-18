@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
-import { button, centerContainer, innerText, link, pageDivider, pageHeader, stack } from '../../components/common/ClassNames';
+import { button, centerContainer, innerText, link, myPic, pageDivider, pageHeader, stack } from '../../components/common/ClassNames';
 import { motion, useScroll } from "framer-motion";
 import { useWindowDimensions } from '../../components/common/Functions';
+import me from '../../images/MeCircle.jpg'
 
 function About() {
     const variants = {
         open: { opacity: 1, height: "auto", x: 0 },
         closed: { opacity: 0, height: "0", x: "-100%" },
     }
-    const [isResumeOpen, setIsResumeOpen] = useState(false)
+    const [isResumeOpen, setIsResumeOpen] = useState(true)
 
     const skillList = ["Javascript", "HTML", "CSS", "SQL", "Java",];
     const { width, height } = useWindowDimensions();
 
     return (
-        <div className={stack}>
+        <div className={stack + ' justify-items-center'}>            
+            <img className={myPic} src={me} alt="Me" />
             <div className={innerText}>
                 Practicing software developer with a B.S. in Computer Science from the University of Texas at Arlington.
             </div>                  

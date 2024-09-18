@@ -1,6 +1,6 @@
 // Main
 export const container = `flex flex-col place-items-center mt-[95px] mb-[75px] h-full w-full px-6 z-0 text-[20px] `;
-export const innerContainer = "mt-3 text-xl px-6 border border-black py-6 rounded bg-gray-100 h-full w-[80vw] ";
+export const innerContainer = "mt-3 text-xl px-6 border border-black py-6 rounded h-full w-[80vw] ";
 export const pageHeader = "font-medium text-3xl ";
 export const pageHeaderClickable = `${pageHeader} + w-fit font-bold hover:text-blue-500 cursor-pointer `;
 export const pageTitle = "text-5xl font-bold mb-3 text-center ";
@@ -13,8 +13,10 @@ export const link = "text-blue-600 ";
 export const fixedSubBox = 'absolute top-[90px] lg:top-[160px] flex ';
 export const textContainer = "grid grid-cols-1 gap-4 place-items-center ";
 export const fixedOptionBox = 'fixed top-[96px] left-[30px] md:left-[20px]flex z-40 ';
+export const myPic = 'w-32'
 export const scrollTracker = "fixed right-0 top-[75px] left-0 h-[10px] origin-[0%] z-20 bg-red-500 ";
-export const star = "ring-blue-500 ring-offset-4 ring-offset-blue-100 z-30 cursor-grab active:cursor-grabbing ";
+export const starColor = "ring-blue-500 "
+export const star = `${starColor} ring-offset-4 ring-offset-blue-100 z-30 cursor-grab active:cursor-grabbing `;
 
 //Common
 export const modalContainer = "z-40 p-10 bg-white cursor-default outline outline-blue-500 outline-4 ";
@@ -51,13 +53,14 @@ export const searchInputs = ' ';
 // Nav
 export const navBar = "fixed top-0 bg-white w-full h-[75px] flex flex-wrap items-center justify-between px-2 text-md z-50 shadow-lg ";
 export const navContainer = "container px-4 mx-auto flex flex-wrap items-center justify-between ";
-export const navComponentContainer = "w-fit py-6 drop-shadow-md ";
+export const navComponentContainer = "w-fit py-4 drop-shadow-md place-content-center ";
 export const navTitleContainer = "relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start ";
 export const navTitle = "font-bold leading-relaxed inli ne-block mx-4 whitespace-nowrap uppercase cursor-pointer hover:text-blue-500 ";
 export const subNavTitle = "font-bold leading-relaxed inline-block mx-4 whitespace-nowrap uppercase cursor-context-menu hover:text-blue-500" ;
 export const subNavHeader = "lg:flex flex-grow items-center text-black ";
 export const subNavContainer = 'flex absolute top-[75px] left-0 w-screen h-screen bg-white flex-col ';
 export const subNavComponent = "px-3 flex items-center text-sm uppercase font-semibold leading-snug hover:underline underline-offset-4 ";
+export const navSettings = "px-3 flex "
 
 //Games
 export const gameContainer = "cursor-pointer flex flex-wrap w-[61em] justify-center ";
