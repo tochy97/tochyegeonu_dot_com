@@ -44,7 +44,7 @@ function About() {
                     I got super focused in community college, joining the Phi Theta Kappa Honor Society and transferring to UTA with 2 scholarships. University was honestly a wild experience but completely worth every second. I admit to struggling when I first transferred trying to find a balance in life, work and school. I eventually joined the army to both help pay for school and get some much needed discipline. I am no longer in the army but I carry the lessons with me. I truly believe in finding joy in work. There is so many beautiful things in life and computer science give people nearly unlimited tools to create more beautiful things.                
                 </p>
                 <aside className={innerText + 'indent-12 '}>
-                    This website is a simple react app deployed with Google Firebase CI/CD.
+                    This website is a simple react app deployed with Google Firebase and Github Actions for CI/CD.
                 </aside>
                 <aside className={innerText + 'indent-12 '}>
                     The history page is something i wrote for fun. I use todays date to calculate the week, the week is used to calculate the month, the month is used calculate year, then i use the year calculation to go all the way back to my birthday. - <a className={link} href='https://github.com/tochy97/tochyegeonu_dot_com'>Souce code. </a>
