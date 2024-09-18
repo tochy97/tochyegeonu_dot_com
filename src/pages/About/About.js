@@ -34,16 +34,17 @@ function About() {
             <hr className={pageDivider} />     
             <article className={innerContainer + centerContainer + stack}>       
                 <h1 className={pageHeader + 'text-center'}>About Me</h1>      
-                <div className={innerText + 'indent-12 '}>
+                <p className={innerText + 'indent-12 '}>
                     My name is Tochy and I am a Nigerian born American living in Texas. I have lived in Texas most of my life. My family first flew to the city of Garland when I was 4 years old. School was an interesting experience. I got into the gifted and talented program which gave me the opportunity to take advanced classes earlier than the curriculum scheduled.
-                </div>
-                <div className={innerText + 'indent-12 '}>
+                </p>
+                <p className={innerText + 'indent-12 '}>
                     I got kinda lazy during high school but I was able to find my passion in software development. I took an AP comp sci class and even though I did not pass the actual exam, I recruited all my friends to sign up for it the next year. I took advantage of being the teacher aid for the AP comp sci class the following year and found another passion for teaching. I took both of these passions home with me and threw it onto my 2 younger brothers and now they are both on track to become better developers than I am.
-                </div>
-                <div className={innerText + 'indent-12 '}>
+                </p>
+                <p className={innerText + 'indent-12 '}>
                     I got super focused in community college, joining the Phi Theta Kappa Honor Society and transferring to UTA with 2 scholarships. University was honestly a wild experience but completely worth every second. I admit to struggling when I first transferred trying to find a balance in life, work and school. I eventually joined the army to both help pay for school and get some much needed discipline. I am no longer in the army but I carry the lessons with me. I truly believe in finding joy in work. There is so many beautiful things in life and computer science give people nearly unlimited tools to create more beautiful things.                
-                </div>
+                </p>
                 <aside className={innerText + 'indent-12 '}>
+                    This website is a simple react app deployed with Google.
                     The history page is something i wrote for fun. It is all Javascript base. I use todays date to calculate the week, the week is used to calculate the month, the month is used calculate year, then i use the year calculation to go all the way back to my birthday. - <a className={link} href='https://github.com/tochy97/tochyegeonu_dot_com'>Souce code. </a>
                     Enjoy the bubbles!
                 </aside>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineLinkedin, AiOutlineInstagram, AiOutlineFacebook } from "react-icons/ai";
+import { VscGithub } from "react-icons/vsc";
 import { footer, footerContainer, footerIcon } from '../common/ClassNames';
 
 function Footer() {
@@ -14,6 +15,9 @@ function Footer() {
                 </a>
                 <a target="_blank" rel="noreferrer" href="https://www.facebook.com/share/wH9d8avJQyAKdiRT/?mibextid=LQQJ4d">
                     <AiOutlineFacebook className={footerIcon}/>
+                </a>
+                <a target="_blank" rel="noreferrer" href="https://github.com/tochy97">
+                    <VscGithub className={footerIcon}/>
                 </a>
             </div>
         </footer>
