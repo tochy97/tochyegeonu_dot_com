@@ -13,7 +13,7 @@ function About() {
 
     const { width, height } = useWindowDimensions();
 
-    // test
+    // test 2
     return (
         <div className={stack + ' justify-items-center'}>
             <img className={myPic} src={me} alt="Me" />
