@@ -31,7 +31,6 @@ function About() {
                     </iframe>
                 </div>
             </motion.div>
-            <hr className={pageDivider} />     
             <article className={innerContainer + centerContainer + stack}>       
                 <h1 className={pageHeader + 'text-center'}>About</h1>      
                 <p className={innerText + 'indent-12 '}>
