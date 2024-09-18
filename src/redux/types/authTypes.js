@@ -1,5 +1,0 @@
-export const SET_USER  = "SET_USER"
-export const SET_LOADED  = "SET_LOADED"
-export const SET_ERROR  = "SET_ERROR"
-export const RESET_USER  = "RESET_USER"
-export const SET_PERMISSION  = "SET_PERMISSION"

@@ -7,9 +7,7 @@ function Main() {
     return (
         <main className={container}>
             <p className={pageTitle}>Welcome</p>
-            <div className={innerContainer}>
-                <About />
-            </div>
+            <About />
         </main>
     );
 }

@@ -13,7 +13,7 @@ import { calenderIcons, dayContainer, modalContainer, modalContentContainer, mod
  * @param {String} status 
  * @returns 
  */
-function Days({ value, month, year, status }) {
+function Days({ value, month, year, status, borderT, borderB, borderL, borderR }) {
 
   let icon;
   switch (status) {
