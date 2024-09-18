@@ -12,6 +12,7 @@ function About() {
     const [isResumeOpen, setIsResumeOpen] = useState(true)
 
     const { width, height } = useWindowDimensions();
+    // This is a test
 
     // test
     return (
