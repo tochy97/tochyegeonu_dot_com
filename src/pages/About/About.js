@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { centerContainer, innerContainer, innerText, link, myPic, pageDivider, pageHeader, stack } from '../../components/common/ClassNames';
+import { button, centerContainer, innerContainer, innerText, link, myPic, pageDivider, pageHeader, stack } from '../../components/common/ClassNames';
 import { motion } from "framer-motion";
 import { useWindowDimensions } from '../../components/common/Functions';
 import me from '../../components/pics/me.png'
@@ -19,7 +19,7 @@ function About() {
             <div className={innerText}>
                 Practicing software developer with a B.S. in Computer Science from the University of Texas at Arlington.
             </div>                  
-            <p className={`${pageHeader + 'cursor-pointer'} text-center`} onClick={() => setIsResumeOpen(!isResumeOpen)}>Resume</p>
+            <p className={button + 'cursor-pointer text-center'} onClick={() => setIsResumeOpen(!isResumeOpen)}>Resume</p>
             <motion.div
                 animate={isResumeOpen ? "open" : "closed"}
                 variants={variants}
@@ -33,7 +33,7 @@ function About() {
             </motion.div>
             <hr className={pageDivider} />     
             <article className={innerContainer + centerContainer + stack}>       
-                <h1 className={pageHeader + 'text-center'}>About Me</h1>      
+                <h1 className={pageHeader + 'text-center'}>About</h1>      
                 <p className={innerText + 'indent-12 '}>
                     My name is Tochy and I am a Nigerian born American living in Texas. I have lived in Texas most of my life. My family first flew to the city of Garland when I was 4 years old. School was an interesting experience. I got into the gifted and talented program which gave me the opportunity to take advanced classes earlier than the curriculum scheduled.
                 </p>
@@ -45,7 +45,9 @@ function About() {
                 </p>
                 <aside className={innerText + 'indent-12 '}>
                     This website is a simple react app deployed with Google.
-                    The history page is something i wrote for fun. It is all Javascript base. I use todays date to calculate the week, the week is used to calculate the month, the month is used calculate year, then i use the year calculation to go all the way back to my birthday. - <a className={link} href='https://github.com/tochy97/tochyegeonu_dot_com'>Souce code. </a>
+                </aside>
+                <aside className={innerText + 'indent-12 '}>
+                    The history page is something i wrote for fun. I use todays date to calculate the week, the week is used to calculate the month, the month is used calculate year, then i use the year calculation to go all the way back to my birthday. - <a className={link} href='https://github.com/tochy97/tochyegeonu_dot_com'>Souce code. </a>
                     Enjoy the bubbles!
                 </aside>
             </article>
